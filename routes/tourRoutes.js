@@ -4,10 +4,10 @@ const tourController = require('../controllers/tourController');
 
 const router = express.Router();
 
-router.param('id',tourController.checkId);
+// router.param('id',tourController.checkId);
 
-router.route("/").get(tourController.getAllTours).post(tourController.checkBody,tourController.addTour);
+router.route("/").get(tourController.getAllTours).post(tourController.addTour);
 
-router.route("/:id").get(tourController.getTour).patch(tourController.updateTour);
+router.route("/:id").get(tourController.getTour).patch(tourController.updateTour).delete(tourController.deleteTour);
 
 module.exports = router;
